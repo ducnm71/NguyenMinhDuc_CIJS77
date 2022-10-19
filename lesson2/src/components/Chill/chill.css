@@ -1,0 +1,36 @@
+.template{
+    display: flex;
+    gap: 50px;
+}
+.container{
+    width: 50%;
+}
+.template .img img{
+    
+    width: 200px;
+    height: 200px;
+}
+.wrap{
+    width: 200px;
+    
+}
+.wrap p{
+    color: white;
+    font-size: 15px;
+}
+.wrap span{
+    color: gray;
+    font-size: 13px;
+}
+.container h1{
+    font-size: 25px;
+}
+.template .img img:hover {
+    transform: scale(1.1);
+    transition: 0.3ms;
+    opacity: 0.5;
+    
+}
+.wrap p:hover{
+    color: purple;
+}

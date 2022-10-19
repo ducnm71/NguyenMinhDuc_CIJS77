@@ -1,0 +1,23 @@
+.listsong{
+    display: flex;
+    gap: 1rem;
+    width: 30%;
+    margin: 1px 1px;
+    padding: 5px 5px;
+    
+}
+.img img{
+    height: auto;
+    width: 60px;
+}
+p, h4{
+    margin: 0 0;
+}
+p{
+    color: gray;
+    font-size: 15px;
+}
+.listsong:hover{
+    opacity: 0.5;
+    border: 1px solid gray; 
+}
