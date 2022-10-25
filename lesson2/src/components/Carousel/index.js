@@ -7,7 +7,7 @@ import { propTypes } from 'react-bootstrap/esm/Image';
 
 
 
-function CarouselItem (image) {
+function CarouselItem (Image) {
     return (
         <div className='container1'>
             <Carousel >
@@ -27,6 +27,6 @@ function CarouselItem (image) {
 }
 
 CarouselItem.prototype = {
-  image: propTypes.string,
+  Image: propTypes.string.isRequire,
 }
 export default CarouselItem
