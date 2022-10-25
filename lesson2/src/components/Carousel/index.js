@@ -27,6 +27,6 @@ function CarouselItem (Image) {
 }
 
 CarouselItem.prototype = {
-  Image: propTypes.string.isRequire,
+  Image: propTypes.string,
 }
 export default CarouselItem
