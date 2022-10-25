@@ -102,4 +102,52 @@ const chill_img = [
         content: 'Lâu lâu nhắc lại về \'vũ trụ người yêu cũ\' cùng Hà Nhi. Chỉ có tại...'
     }
 ]
-export {imgs, chill_img}
+const imgSlider = [
+  'https://photo-zmp3.zmdcdn.me/banner/f/a/3/1/fa31693a9d608ef66f8a4d942b66588e.jpg',
+  'https://photo-zmp3.zmdcdn.me/banner/2/0/9/1/20914343e6e2452e3d3b216c427f84d5.jpg',
+  'https://photo-zmp3.zmdcdn.me/banner/0/b/0/d/0b0d1a6a1ffa117504025d6979f1b0a7.jpg',
+  'https://photo-zmp3.zmdcdn.me/banner/5/f/8/e/5f8e261888a1f6eb509a17e8c3da45f7.jpg',
+  'https://photo-zmp3.zmdcdn.me/banner/c/9/4/8/c9486cfa0ea68fd026409f8159dcce99.jpg',
+  'https://photo-zmp3.zmdcdn.me/banner/f/e/8/4/fe844ebbd9a713e6283ee504d94e00f7.jpg'
+]
+
+const postcardImg = [
+  {
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w128_r1x1_webp/images/4/b/7/2/4b72201158a83951be8be9f39bc29abf.jpg',
+    name: ' #26 Bí quyết thành công của người Do Thái | Đắp Chăn Nằm Nghe...',
+    channel: 'Đắp Chăn Nằm Nghe Tun Kể',
+    timeUp: '16/10/2022 • 16 phút' 
+  },
+  {
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w128_r1x1_webp/images/b/0/e/e/b0ee74f23dfbb2de53bfbb4e11a0e9c2.jpg',
+    name: '#25 Cùng Đích Lép đi tìm 5 dấu hiệu lý tưởng mà một người bạn đời',
+    channel: 'Đắp Chăn Nằm Nghe Tun Kể',
+    timeUp: '09/10/2022 • còn 25 phút' 
+  },
+  {
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w128_r1x1_webp/images/2/c/3/9/2c393e3918460b79fac9a30f182bbd7c.jpg',
+    name: '86. Hướng Nội và Hướng Ngoại',
+    channel: 'HIEU.TV',
+    timeUp: '21/10/2022 • 22 phút'
+  },
+  {
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w128_r1x1_webp/images/4/0/2/0/402050c985025ba6bb5c2a0949b244c1.jpg',
+    name: '[Phần 2] Cuộc Đời Nói Chuyện Bằng Kết Quả - Tri kỷ cảm xúc #252',
+    channel: 'Tri kỷ cảm xúc',
+    timeUp: '17/10/2022 • 25 phút'
+  },
+  {
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w128_r1x1_webp/images/3/7/0/5/37056ccd5ad6521db9f3941a5084d27f.jpg',
+    name: '85. Hành Trình Hiểu Về Bản Thân',
+    channel: 'HIEU.TV',
+    timeUp: '11/10/2022 • 19 phút'
+  },
+  {
+    img: 'https://photo-resize-zmp3.zmdcdn.me/w128_r1x1_webp/avatars/1/d/0/d/1d0d3f88a0ab911690cc0a3e9c23fff0.jpg',
+    name: 'Cuối đoạn đường | Tập cuối - Nắng Thuỷ Tinh Podcast Series',
+    channel: 'Nắng Thủy Tinh',
+    timeUp: '21/08/2022 • 24 phút'
+  }
+]
+
+export {imgs, chill_img, imgSlider, postcardImg}

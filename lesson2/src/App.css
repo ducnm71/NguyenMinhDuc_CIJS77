@@ -1,10 +1,14 @@
+/* .App{
+  margin-left: 250px;
+} */
 *{
   background-color: #1a0c23;
   color: white;
   cursor: pointer;
 }
 img {
-  border-radius: 5px;
+  border-radius: 2px;
+  
 }
 p:hover{
   color: purple;
@@ -47,10 +51,4 @@ p:hover{
     transform: rotate(360deg);
   }
 } */
-.body{
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  margin: 1.5rem 0 0 100px;
-  width: 70%;
-}
+

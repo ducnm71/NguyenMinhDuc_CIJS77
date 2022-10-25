@@ -1,5 +1,4 @@
 import './style.css'
-import 'boxicons'
 import { useState } from 'react';
 
 
@@ -15,7 +14,7 @@ function Card(props) {
                     <button onClick={()=> setSelected(!selected)} className={!selected ? "album active" : "album"}>{props.album}</button>
                     <div className="all">
                         <p>TẤT CẢ</p>
-                        <box-icon name='chevron-right'></box-icon>
+                        <i class="bi bi-chevron-right"></i>
                     </div>
                     
                 </div>

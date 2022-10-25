@@ -1,9 +1,14 @@
 .card {
-    margin-left: 100px;
+    outline-style: none;
+    margin: 100px 0 0 340px;
+    border: 0px;
+    padding: 0;
+    background-color:#1a0c23;
 }
 .card h1 {
-    font-size: 23px;
+    font-size: 24px;
     color: white;
+    
 }
 .button {
     display: flex;
@@ -26,8 +31,8 @@
     border: 0;
 }
 .button .all{
-    margin-top: 2px;
-    margin-left: 1000px;
+    margin-top: 4px;
+    margin-left: 935px;
     display: flex;
     font-weight: 1px;
     color: rgb(107, 104, 104);
