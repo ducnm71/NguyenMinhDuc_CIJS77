@@ -1,0 +1,46 @@
+.card {
+    outline-style: none;
+    margin: 100px 0 0 340px;
+    border: 0px;
+    padding: 0;
+    background-color:#1a0c23;
+}
+.card h1 {
+    font-size: 24px;
+    color: white;
+    
+}
+.button {
+    display: flex;
+}
+
+.song, .album {
+    width: 100px;
+    height: 27px;
+    border-radius: 20px;
+    
+    color: white;
+    background-color:#1a0c23;
+    border: 1px solid rgb(84, 83, 83);
+}
+.button .album{
+    margin-left: 20px;
+}
+.active{
+    background-color: purple;
+    border: 0;
+}
+.button .all{
+    margin-top: 4px;
+    margin-left: 935px;
+    display: flex;
+    font-weight: 1px;
+    color: rgb(107, 104, 104);
+    font-size:13px;
+}
+
+.button .all p:hover{
+    color: purple;
+}
+  
+  

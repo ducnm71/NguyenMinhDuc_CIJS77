@@ -1,0 +1,53 @@
+.container2{
+    margin: 100px 0 0 320px;
+}
+.PC{
+    display: flex;
+    gap: 1.5rem;
+}
+.pc-left, .pc-right{
+    padding: 0 40px 0 15px;
+    border: 1px solid rgb(105, 62, 105);
+    border-radius: 10px;
+    background-color: rgb(105, 62, 105);
+
+}
+.left, .right{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 30px;
+    background-color: rgb(105, 62, 105);
+    background-color: transparent;
+    
+}
+.infor{
+    background-color: rgb(105, 62, 105);
+}
+.infor h4, p{
+    background-color: transparent;
+}
+img{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+h3{
+    font-size: 18px;
+    background-color: transparent;
+}
+.pc-navi{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.pc-navi h1{
+    font-size: 25px;
+}
+.pc-navi p{
+    margin-left: 935px;
+}
+.left:hover, .right:hover{
+    opacity: 0.5;
+    border: 0px solid gray;
+}
