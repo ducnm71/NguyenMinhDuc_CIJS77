@@ -3,13 +3,20 @@ import './App.css';
 // import CounterFC from './Components/Counter';
 // import StudentFC from './Components/Student';
 // import TrafficLight from './Components/TrafficLight';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react'
-import RegisterPage from './Components/Form';
+import {RegisterPage} from './Components/Form';
+import { LoginPage } from './Components/Form';
 
 function App() {
   return (
     <div className="App">
-        <RegisterPage/>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<RegisterPage />}/>
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
