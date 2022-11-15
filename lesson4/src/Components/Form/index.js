@@ -2,6 +2,7 @@ import './style.scss'
 import React from 'react'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {withRouter} from 'react'
 
 class RegisterPage extends React.Component {
     constructor(props) {
@@ -100,6 +101,7 @@ class RegisterPage extends React.Component {
             password: password,
         })
       });
+      
       toast.success("Register Successfully!")
       window.location.href = './login'
       alert("Register Successfully!")
@@ -170,6 +172,9 @@ class RegisterPage extends React.Component {
       )
     }
   }
+
+RegisterPage = withRouter(RegisterPage)
+
   class LoginPage extends React.Component {
     constructor(props) {
       super(props)
@@ -182,34 +187,62 @@ class RegisterPage extends React.Component {
         }
       }
     }
-    checkExist = (valueInput) => {
-      fetch(`https://635d3184cb6cf98e56af2894.mockapi.io/api/v1/users?username=${valueInput}`, {
+    // checkExist = (valueInput) => {
+    //   fetch(`https://635d3184cb6cf98e56af2894.mockapi.io/api/v1/users?username=${valueInput}`, {
+    //     method: "GET"
+    //   }).then((response) => response.json()).then((users) => {
+    //     console.log(users);
+    //     if(users.filter((users) => 
+    //         users.username === valueInput
+    //     ).length === 0){
+    //         this.setState({
+    //             ...this.state,
+    //             errorMessage: {
+    //                 ...this.state.errorMessage,
+    //                 username: "Username does not exist",
+    //             },
+    //         })
+    //     } else{
+    //         this.setState({
+    //             ...this.state,
+    //             errorMessage: {
+    //                 ...this.state.errorMessage,
+    //                 username: "",
+    //             },
+    //         })
+    //     }
+    //   })
+
+    // }
+    
+    handleSubmitForm = (e) => {
+      e.preventDefault();
+      fetch(`https://635d3184cb6cf98e56af2894.mockapi.io/api/v1/users?username=${this.state.username}`, {
         method: "GET"
       }).then((response) => response.json()).then((users) => {
-        console.log(users);
-        if(users.filter((users) => 
-            users.username === valueInput
-        ).length === 0){
-            this.setState({
-                ...this.state,
-                errorMessage: {
-                    ...this.state.errorMessage,
-                    username: "Username does not exist",
-                },
-            })
-        } else{
-            this.setState({
-                ...this.state,
-                errorMessage: {
-                    ...this.state.errorMessage,
-                    username: "",
-                },
-            })
+        let userFound = users.find((user) =>
+          user.username === this.state.username
+        )
+        let message = ''
+        if (userFound != null) {
+          if (this.state.username === userFound.username && userFound.password === this.state.password) {
+            localStorage.setItem("userId", JSON.stringify(userFound.id));
+            this.props.history.push("/");
+          } else {
+            message = "Username or Password is incorrect"
+          }
+        } else {
+          message = "Username or Password is incorrect"
         }
-      })
-
+        this.setState({
+          ...this.state,
+          password: "",
+          errorMessage: message
+        })
+      }).catch((error) => {
+        console.log(error);
+      });
     }
-    
     onChangeInput = (nameInput, value) => {
       const errorMessage = {
         ...this.state.errorMessage,
@@ -222,38 +255,37 @@ class RegisterPage extends React.Component {
         [nameInput]: value,
         errorMessage: errorMessage,
       })
-      console.log(value);
     }
 
-    handleSubmitForm = (e) => {
-      e.preventDefault();
-      const { errorMessage, password, username } = this.state
-      if (Object.values(errorMessage).filter((value) => value !== "").length > 0) {
-        return;
-      }
-      fetch("https://635d3184cb6cf98e56af2894.mockapi.io/api/v1/users", {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            username: username,
-            password: password,
-        })
-      });
-      this.checkExist()
-      this.setState({...this.state,
-        username: "",
-        password: "",
-        errorMessage: {
-          username: "",
-          password: "",
-        }
-      })
-    }
+    // handleSubmitForm = (e) => {
+    //   e.preventDefault();
+    //   const { errorMessage, password, username } = this.state
+    //   if (Object.values(errorMessage).filter((value) => value !== "").length > 0) {
+    //     return;
+    //   }
+    //   fetch("https://635d3184cb6cf98e56af2894.mockapi.io/api/v1/users", {
+    //     method: "POST",
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //         username: username,
+    //         password: password,
+    //     })
+    //   });
+    //   this.checkExist()
+    //   this.setState({...this.state,
+    //     username: "",
+    //     password: "",
+    //     errorMessage: {
+    //       username: "",
+    //       password: "",
+    //     }
+    //   })
+    // }
     
     render() {
-      const { errorMessage } = this.state
+      // const { errorMessage } = this.state
       return (
       <div className='register-form'>
         <h1>Log In</h1>
@@ -267,9 +299,6 @@ class RegisterPage extends React.Component {
                     }} />
                         <label className='form__label' for='username'>Username</label>
                     </div>
-                    <div>
-                      {errorMessage.username !== "" ? <div className='error'>{errorMessage.username}</div> : <></>}
-                    </div>
                 
                     <div className='form__group field'>
                         
@@ -278,7 +307,9 @@ class RegisterPage extends React.Component {
                     }} />
                         <label className='form__label' for='password'>Password</label>
                     </div>
-                
+                    <div>
+                      {this.state.errorMessage !== '' ? <div className='error'>{this.state.errorMessage}</div> : <></>}
+                    </div>
                 
                 <button type='submit'>Submit</button>
         </form>
@@ -286,5 +317,6 @@ class RegisterPage extends React.Component {
       )
     }
   }
-
+  
+LoginPage = withRouter(LoginPage)
   export  {RegisterPage, LoginPage}
