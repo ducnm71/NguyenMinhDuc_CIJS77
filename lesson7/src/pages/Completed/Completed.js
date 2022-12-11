@@ -13,6 +13,9 @@ const Completed = () => {
     setList(newList);
   };
 
+  const handleDeleteall = () => {
+    setList([])
+  }
   return (
     <SCompleted>
       <div className="done">
@@ -27,7 +30,7 @@ const Completed = () => {
         })}
       </div>
 
-      <button>
+      <button onClick={handleDeleteall}>
         <i class="fa fa-trash-o"></i> Delete all
       </button>
     </SCompleted>
